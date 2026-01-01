@@ -7,31 +7,49 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+    <!-- header -->
     <header class="site-header">
         <div class="header-container">
+            <!--logo-->
             <div class="logo">
                 <a href="index.html">sam.dev</a>
             </div>
 
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">home</a></li>
-                    <li><a href="projects.html">projects</a></li>
-                    <li><a href="skills.html">skills</a></li>
-                    <li><a href="about.html">about</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
-            </nav>
+            <!--toggle light/dark-->
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkmode-toggle">
+                <label for="darkmode-toggle">
+                    <span class="switch-thumb">
+                        <img src="assets/icons/moon.svg" class="icon-moon" alt="Moon">
+                        <img src="assets/icons/sun.svg" class="icon-sun" alt="Sun">
+                    </span>
+                </label>
+            </div>
 
-            <!-- Humburger -->
-            <button class="menu-btn" aria-label="Toggle menu">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
-               </svg>
-            </button>
+            <div class="right">
+                <!-- Humburger -->
+                <button class="menu-btn" aria-label="Toggle menu">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24"   height="24" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C"  stroke-width="2" stroke-linecap="round"  stroke-linejoin="round" class="lucide lucide-menu-icon   lucide-menu"><path   d="M4 5h16"/><path d="M4 12h16"/><path   d="M4 19h16"/>
+                   </svg>
+                </button>
+
+                <!--navigation links-->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">home</a></li>
+                        <li><a href="projects.html">projects</a></li>
+                        <li><a href="skills.html">skills</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="portfolio-content"></main>
+    <main class="portfolio-content">
+        
+    </main>
 
     <!--
     <footer>
