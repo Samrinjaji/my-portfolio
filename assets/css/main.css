@@ -124,6 +124,88 @@ header {
 }
 
 
+/* Home Section */
+.home-section {
+    min-height: calc(80vh - 60px);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content img {
+    display: none;
+}
+
+.hero-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-light-beige);
+    margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+    color: var(--color-teal);
+}
+
+.hero-subtitle {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.hero-description {
+    font-size: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.hero-description span:first-of-type  {
+    display: inline-block;
+    border: 2px solid var(--color-teal);
+    border-radius: 50% 45% 50% 45%;
+    padding: 0.5rem 1rem;
+    color: var(--color-teal);
+    font-weight: 600;
+    transform: rotate(-5deg);
+}
+
+.hero-description :nth-of-type(2) {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.home-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../images/keyboard-dark.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 400px auto;
+
+    filter: blur(1px);
+    opacity: 0.3;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
 
 
 

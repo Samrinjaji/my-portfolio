@@ -27,6 +27,7 @@ function toggleMenu() {
 
 menuBtn.addEventListener('click', toggleMenu);
 overlay.addEventListener('click', closeMenu);
+
 // Close menu when clicking a nav link
 navLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
