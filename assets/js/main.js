@@ -1,41 +1,20 @@
-const menuBtn = document.querySelector('.menu-btn');
-const mainNav = document.querySelector('.main-nav');
-const overlay = document.querySelector('.overlay');
-const closeBtn = document.querySelector('.close-btn');
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('primary-nav');
+const overlay = document.getElementById('overlay');
 
 menuBtn.addEventListener('click', () => {
-    mainNav.classList.add('active');
-    overlay.classList.add('active');
+    nav.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+    overlay.classList.toggle('active'); // Toggle overlay
+    
+    const isExpanded = nav.classList.contains('active');
+    menuBtn.setAttribute('aria-expanded', isExpanded);
 });
 
-closeBtn.addEventListener('click', () => {
-    mainNav.classList.remove('active');
-    overlay.classList.remove('active');
-});
-
+// Close menu when clicking overlay
 overlay.addEventListener('click', () => {
-    mainNav.classList.remove('active');
+    nav.classList.remove('active');
+    menuBtn.classList.remove('active');
     overlay.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
 });
-
-// View More Projects functionality
-const viewMoreBtn = document.getElementById('viewMoreBtn');
-const projectsGrid = document.querySelector('.projects-grid');
-
-if (viewMoreBtn) {
-    viewMoreBtn.addEventListener('click', () => {
-        projectsGrid.classList.toggle('show-all');
-        
-        if (projectsGrid.classList.contains('show-all')) {
-            viewMoreBtn.textContent = 'View Less';
-        } else {
-            viewMoreBtn.textContent = 'View More Projects';
-            
-            // Scroll back to projects section
-            document.querySelector('#projects').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-}
