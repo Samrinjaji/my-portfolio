@@ -1,0 +1,73 @@
+/* Tablet - 768px and up */
+@media (min-width: 768px) {
+    .header-container {
+        padding: 1.25rem 2rem;
+    }
+
+    .site-logo span {
+        font-size: 1.5rem;
+    }
+
+    /* Hide mobile menu button */
+    .menu-btn {
+        display: none;
+    }
+
+    /* Show navigation inline */
+    .primary-nav {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+        border-top-left-radius: 0;
+    }
+
+    .nav-links {
+        padding: 0;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem 0;
+        border-bottom: 2px solid transparent;
+        position: relative;
+    }
+
+    .nav-links li a:hover {
+        color: var(--color-blue);
+    }
+
+    .nav-links li a.active {
+        border-bottom-color: var(--color-blue);
+    }
+
+    /* Hide overlay on tablet/desktop */
+    .overlay {
+        display: none;
+    }
+    
+}
+
+/* Desktop - 1024px and up */
+@media (min-width: 1024px) {
+    .header-container {
+        padding: 1.5rem 2rem;
+    }
+
+    .site-logo span {
+        font-size: 1.75rem;
+    }
+
+    .nav-links {
+        gap: 2.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1.05rem;
+    }
+}
+
