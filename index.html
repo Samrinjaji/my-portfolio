@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samrin | Portfolio</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
-    <link rel="icon" type="image/x-icon" href="/assets/images/person.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/person.png">
+    <link rel="stylesheet" href="assets/css/animation.css">
 </head>
 <body>
     <header class="site-header">
@@ -32,7 +33,7 @@
 
             <!-- hamburger btn -->
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-                <img src="/assets/icons/menu.svg" alt="">
+                <img src="assets/icons/menu.svg" alt="">
             </button>
 
             <!-- overlay -->
@@ -41,6 +42,45 @@
         </div>
     </header>
 
+    <!-- main content -->
+     <main class="portfolio-content">
+        <!-- hgome -->
+        <section id="home" class="home-section">
+            <div class="container">
+
+                <div class="content">
+                    <img src="./assets/icons/Arrow.svg" alt="arrow">
+                    <h1 class="hero-title">
+                    Hello! I Am
+                    <span class="highlight name">
+                        Samrin Jaji
+                        <img
+                        src="assets/icons/Verified.svg"
+                        alt="Verified Developer"
+                        class="verified-badge"
+                        />
+                    </span>
+                    </h1>
+
+                    <div class="hero-image-container">
+                        <!-- Shadow at the bottom -->
+                        <div class="hero-shadow"></div>
+
+                        <!-- Floating hero image -->
+                        <img src="assets/images/akatsukidev.png" width="200" alt="Samrin Akatsuki" class="hero-popout">
+                    </div>
+
+                    <p class="hero-subtitle">Frontend Developer</p>
+                    <p class="hero-description">Crafting responsive websites where technology meets<span>creativity</span>...<br>
+                        <span>
+                            I love combining design and logic to create meaningful digital products.
+                        </span>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+     </main>
 
     <script src="/assets/js/main.js"></script>
 </body>
