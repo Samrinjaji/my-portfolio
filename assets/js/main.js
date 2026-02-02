@@ -1,5 +1,5 @@
 const menuBtn = document.getElementById('menuBtn');
-const nav = document.getElementById('primary-nav');
+const nav = document.getElementById('navigation-menu');
 const overlay = document.getElementById('overlay');
 
 menuBtn.addEventListener('click', () => {
@@ -18,4 +18,3 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
     menuBtn.setAttribute('aria-expanded', 'false');
 });
-
