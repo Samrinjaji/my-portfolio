@@ -24,6 +24,9 @@ body {
 }
 /* header styles */
 .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
     background: var(--color-black);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -41,7 +44,7 @@ body {
 
 /* logo styles */
 .logo img{
-    height: 40px;
+    height: 38px;
 }
 
 .logo span {
@@ -92,7 +95,7 @@ body {
 .nav-links li a {
     color: var(--color-light);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 500;
     display: block;
     padding: 0.5rem 0;
@@ -147,7 +150,7 @@ body {
 }
 
 .hero-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -157,8 +160,8 @@ body {
 }
 
 .verified-badge {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     transform: translateY(2px);
     filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
 }
@@ -191,4 +194,106 @@ body {
     border-radius: 50%; 
     animation: float-pop 4s ease-in-out infinite;
 }
+
+.hero-subtitle {
+    font-size: 0.825rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.hero-description {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.hero-description span:first-of-type  {
+    display: inline-block;
+    border: 2px solid var(--color-red);
+    border-radius: 50% 45% 50% 45%;
+    padding: 0.5rem 1rem;
+    color: var(--color-red);
+    font-weight: 600;
+    transform: rotate(-5deg);
+}
+
+.hero-description :nth-of-type(2) {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.hero-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.hero-socials a {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brush-words {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.brush {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--color-light);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14ch;
+}
+
+.brush::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("../icons/brush.svg") center no-repeat;
+  background-size: 110% 100%;
+
+  z-index: -1;
+}
+
+.think::before {
+  transform: rotate(-3deg);
+}
+
+.code::before {
+  transform: rotate(2deg);
+}
+
+.innovate::before {
+  transform: rotate(-1deg);
+}
+
+.brush {
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+}
+
+
+
+
 
