@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="assets/css/animation.css">
 </head>
 <body>
+    <!-- site header -->
     <header class="site-header">
         <div class="header-container">
-
-            <!-- Logo Section -->
+            <!-- Logo Section  -->
             <div class="logo">
                 <a href="index.html">
                     <img src="/assets/images/akatsuki.png" alt="Logo">
                     <span>sam.dev</span>
                 </a>
             </div>
-            
+
             <!-- Navigation Menu -->
             <nav class="navigation-menu" id="navigation-menu">
                 <ul class="nav-links" id="navLinks">
@@ -38,39 +38,82 @@
 
             <!-- overlay -->
             <div class="overlay" id="overlay"></div>
-
         </div>
     </header>
 
     <!-- main content -->
-     <main class="main-content">
+    <main class="main-content">
         <!-- hgome -->
         <section id="home" class="home-section">
             <div class="container">
 
-                <div class="content">
-                    <div class="content-wrapper">
-                        <img src="./assets/icons/Arrow.svg" alt="arrow">
+                <div class="hero-content">
+                    <div class="hero-intro">
+                        <img src="./assets/icons/Arrow.svg" alt="arrow" class="hero-arrow">
                         <h1 class="hero-title">
-                        Hello! I Am
-                        <span class="highlight name">
-                            Samrin Jaji
-                        </span>
-                        <img
-                            src="assets/icons/Verified.svg"
-                            alt="Verified Developer"
-                            class="verified-badge"
-                            />
+                            Hello! I Am
+                            <span class="highlight name">Samrin Jaji</span>
+                            <img src="assets/icons/Verified.svg"alt="Verified Developer" class="verified-badge"/>
                         </h1>
                     </div>
 
+                <div class="hero-profile">
+                    <!-- Floating hero image -->
+                    <div class="hero-img-wrapper">
+                        <!-- Shadow at the bottom -->
+                        <div class="hero-shadow"></div>
+
+                        <img src="assets/images/akatsukidev.png" alt="Samrin Akatsuki" class="profile-img">
+                    </div>
+
+                    <div class="hero-description">
+                        <div class="hero-description-wrapper">
+                            <p class="profile-role">Frontend Developer</p>
+                            <p class="profile-description">
+                                Crafting responsive websites where technology meets <span>creativity</span>...<br>
+                                <span>
+                                    I love combining design and logic to create meaningful digital products.
+                                </span>
+                            </p>
+                        </div>
+                        
+
+                        <div class="hero-socials">
+                            <a href="https://github.com/Samrinjaji" target="_blank" aria-label="GitHub">
+                                <img src="assets/icons/github.svg" alt="GitHub">
+                            </a>
+                            <a href="https://linkedin.com/in/Samrinjaji" target="_blank" aria-label="LinkedIn">
+                                <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="brush-words">
+                    <span class="brush think">THINK.</span>
+                    <span class="brush code">CODE.</span>
+                    <span class="brush innovate">INNOVATE.</span>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!--
+                <div class="content">
+                    <div class="content-wrapper"></div>
+
                     <div class="hero-wrapper">
                         <div class="hero-image-container">
-                            <!-- Shadow at the bottom -->
+                            <!-- Shadow at the bottom 
                             <div class="hero-shadow"></div>
 
-                            <!-- Floating hero image -->
-                            <img src="assets/images/akatsukidev.png" alt="Samrin Akatsuki" class="hero-popout">
+                            <!-- Floating hero image 
+                            <div class="hero-img-wrapper">
+                                <img src="assets/images/akatsukidev.png" alt="Samrin Akatsuki" class="hero-popout">
+                                <div class="hero-overlay"></div>
+                            </div>
                         </div>
 
                         <div class="text-wrapper">
@@ -105,6 +148,8 @@
             </div>
         </section>
      </main>
+
+     -->
 
     <script src="/assets/js/main.js"></script>
 </body>

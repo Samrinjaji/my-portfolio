@@ -1,11 +1,15 @@
-/* Tablet - 768px and up */
+/* Tablet - 768px and up  */
 @media (min-width: 768px) {
   .header-container {
     padding: 1.25rem 3rem;
   }
 
-  .logo img {
+  .logo img{
     display: none;
+  }
+
+  .logo span {
+    display: block;
   }
 
   .logo span {
@@ -26,45 +30,66 @@
     font-size: 0.95rem;
   }
 
+  .menu-btn img {
+    width: 22px;
+    height: 22px;
+  }
+
   .home-section {
     padding: 6rem 3rem;
     justify-content: center;
   }
 
-  .content {
-    margin: 0 auto;
+  .container {
+    gap: 2rem;
   }
 
   .hero-title {
     font-size: 1.4rem;
   }
 
-  .hero-image-container {
+  .hero-img-wrapper {
     height: 300px;
     margin: 3rem 0;
   }
 
   .hero-shadow {
-    width: 220px;
-    height: 35px;
+    width: 260px;
+    height: 40px;
   }
-
-  .hero-popout {
-    width: 220px;
-    bottom: 30px;
+  
+  .profile-img {
+    width: 200px;
+    bottom: 40px;
   }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
+  
   .hero-description {
-    font-size: 1.1rem;
+    padding: 0.85rem;
     line-height: 1.6;
+    text-align: center;
   }
 
-  .hero-description :nth-of-type(2) {
+  .profile-role {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .profile-description  {
+    line-height: 1.5;
+    margin-bottom: 0.10rem;
+    font-size: 1.8rem;
+  }
+
+  .profile-description span:first-of-type  {
+    padding: 0.5rem 1.1rem;
+    color: var(--color-red);
+    font-weight: 600;
+    transform: rotate(-5deg);
+  }
+
+  .profile-description :nth-of-type(2) {
     font-size: 0.9rem;
+    opacity: 0.6;
   }
 
   .hero-socials a {
@@ -72,16 +97,14 @@
     height: 48px;
   }
 
-  .brush-words {
-    margin-top: 4rem;
-  }
-
   .brush {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     min-width: 15ch;
+    position: relative;
   }
 
 }
+
 /* desktop - 1024px and up */
 @media (min-width: 1024px) {
   .logo span {
@@ -124,7 +147,7 @@
     min-height: 100vh;
     padding: 7rem 4rem;
   }
-
+  
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -137,49 +160,76 @@
     justify-content: space-between;
     gap: 2rem;
     flex-direction: column;
-    max-width: 1000px;
   }
-
-  .content-wrapper {
-    display: flex;
+  
+  .hero-intro {
     align-items: center;
   }
 
-  .content-wrapper > img:first-of-type {
+  .hero-intro > img:first-of-type {
     display: block;
     margin-top: 1.5rem;
   }
 
-  .hero-wrapper {
+  .hero-profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
-  .hero-shadow {
-    width: 250px;
-    height: 45px;
-  }
-
-  .hero-popout {
-    width: 230px;
-    bottom: 40px;
-    border-radius: 25%;
-  }
-
-  .text-wrapper {
-    text-align: left;
+  .profile-img {
+    border-radius: 30%;
+    width: 210px;
   }
 
   .hero-description {
-    font-size: 1.6rem;
+    text-align: left;
+  }
+
+  .profile-role {
+    text-align: left;
+  }
+
+  .profile-description {
     line-height: 1.4;
   }
 
   .hero-socials {
-    justify-content: flex-start;
+    position: absolute;         
+    left: 4rem;               
+    top: 1rem;                 
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 900;
   }
-  
+
+  .hero-socials a {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .hero-socials a:hover {
+    transform: translateY(-4px);
+    background: rgba(173, 38, 45, 0.2);
+  }
+
+  .hero-socials::before {
+    content: "";
+    width: 4px;
+    height: 100vh;
+    margin-bottom: 1rem;
+    background: linear-gradient(to bottom, var(--color-red), transparent 50%, var(--color-red));
+}
+
   .brush-words {
     gap: 3rem;
   }
@@ -198,4 +248,31 @@
 
     z-index: -1;
   }
+
+  .home-section::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  transform: translateY(-50%);
+
+  width: 600px;
+  height: 600px;
+
+  background: url("../images/keyboard.png") center / contain no-repeat;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+
+}
+
+
+/* desktop - 1024px and up 
+
+
+
+  
+  
+  
 }
