@@ -43,3 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
   }, startDelay);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const socials = document.querySelector(".hero-socials");
+  socials.classList.add("active");
+
+  // Animate each icon with slight delay
+  const icons = socials.querySelectorAll("a");
+  icons.forEach((icon, i) => {
+    icon.style.animation = `iconSlide 0.5s ease forwards`;
+    icon.style.animationDelay = `${0.7 + i * 0.1}s`; // starts after line grows
+  });
+});
