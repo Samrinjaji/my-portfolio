@@ -20,6 +20,17 @@ overlay.addEventListener('click', () => {
     menuBtn.setAttribute('aria-expanded', 'false');
 });
 
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+    });
+});
+
 // role typing
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.querySelector(".typing");
@@ -48,10 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const socials = document.querySelector(".hero-socials");
   socials.classList.add("active");
 
-  // Animate each icon with slight delay
   const icons = socials.querySelectorAll("a");
   icons.forEach((icon, i) => {
     icon.style.animation = `iconSlide 0.5s ease forwards`;
-    icon.style.animationDelay = `${0.7 + i * 0.1}s`; // starts after line grows
+    icon.style.animationDelay = `${0.7 + i * 0.1}s`; 
   });
 });
+/*
+
+
+
+
+
+*/
+

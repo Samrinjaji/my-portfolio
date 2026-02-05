@@ -1,18 +1,18 @@
 /* Tablet - 768px and up  */
 @media (min-width: 768px) {
-  .header-container {
+  .container {
     padding: 1.25rem 3rem;
   }
 
-  .logo img{
+  .site-header .logo img{
     display: none;
   }
 
-  .logo span {
+  .site-header .logo span {
     display: block;
   }
 
-  .logo span {
+  .site-header .logo span {
     display: inline-block;
     margin-left: 0.6rem;
     font-size: 1.3rem;
@@ -35,34 +35,32 @@
     height: 22px;
   }
 
-  .home-section {
-    padding: 6rem 3rem;
-    justify-content: center;
+   .home-section {
+    padding: 6rem 0;
   }
 
   .container {
     gap: 2rem;
   }
 
-  .hero-title {
+   .hero-title {
     font-size: 1.4rem;
   }
 
   .hero-img-wrapper {
     height: 300px;
-    margin: 3rem 0;
   }
 
   .hero-shadow {
     width: 260px;
     height: 40px;
   }
-  
+
   .profile-img {
     width: 200px;
     bottom: 40px;
   }
-  
+
   .hero-description {
     padding: 0.85rem;
     line-height: 1.6;
@@ -104,25 +102,23 @@
     min-width: 15ch;
     position: relative;
   }
-
 }
 
 /* desktop - 1024px and up */
 @media (min-width: 1024px) {
   .logo span {
     font-size: 1.5rem;
-    display: inline-block;
   }
 
-  .navigation-menu {
+  .site-header .navigation-menu {
     position: static;
+    right: auto;
     height: auto;
     width: auto;
     max-width: none;
     background: transparent;
     box-shadow: none;
     border-radius: 0;
-    right: auto;
     transition: none;
   }
 
@@ -144,9 +140,11 @@
   .overlay {
     display: none;
   }
+}
 
+/* desktop - 1024px and up */
+@media (min-width: 1024px) {
   .home-section {
-    min-height: 100vh;
     padding: 7rem 4rem;
   }
 
@@ -155,30 +153,30 @@
     position: absolute;
     top: 50%;
     right: -120px;
-    transform: translateY(-50%);
-    
+
     width: 600px;
-    height:500px;
-    
+    height: 500px;
+
     background: url("../images/keyboard.png") center / contain no-repeat;
-    opacity: 0.25;
     pointer-events: none;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+
+    opacity: 0;
+    transform: translateY(-50%) translateX(80px) scale(0.95);
+
+    animation: heroReveal 1.2s ease-out forwards;
+    animation-delay: 0.4s;
   }
 
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+
+  .container {
+    max-width: 1200px;
+    width: 100%;
+
     gap: 2rem;
-    flex-direction: column;
+    padding: 0;
   }
-  
+
   .hero-intro {
     align-items: center;
   }
@@ -199,11 +197,11 @@
     width: 210px;
   }
 
-  .hero-description {
+  .profile-role {
     text-align: left;
   }
 
-  .profile-role {
+  .hero-description {
     text-align: left;
   }
 

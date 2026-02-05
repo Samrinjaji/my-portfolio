@@ -49,11 +49,6 @@
   }
 }
 
-@keyframes arrowFloat {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
-}
-
 @keyframes nameReveal {
   from {
     opacity: 0;
@@ -84,5 +79,12 @@
 @keyframes lineGrow {
   to {
     height: 100vh;
+  }
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 0.25;
+    transform: translateY(-50%) translateX(0) scale(1);
   }
 }
