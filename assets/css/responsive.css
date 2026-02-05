@@ -72,12 +72,14 @@
   .profile-role {
     font-size: 1rem;
     opacity: 0.7;
+    
   }
 
   .profile-description  {
     line-height: 1.5;
     margin-bottom: 0.10rem;
     font-size: 1.8rem;
+    margin-left: 0;
   }
 
   .profile-description span:first-of-type  {
@@ -217,18 +219,13 @@
     transition: transform 0.3s ease, background 0.3s ease;
   }
 
-  .hero-socials a:hover {
-    transform: translateY(-4px);
-    background: rgba(173, 38, 45, 0.2);
-  }
-
   .hero-socials::before {
     content: "";
     width: 4px;
     height: 100vh;
     margin-bottom: 1rem;
     background: linear-gradient(to bottom, var(--color-red), transparent 50%, var(--color-red));
-}
+  }
 
   .brush-words {
     gap: 3rem;
@@ -257,22 +254,10 @@
   transform: translateY(-50%);
 
   width: 600px;
-  height: 600px;
+  height:500px;
 
   background: url("../images/keyboard.png") center / contain no-repeat;
   opacity: 0.25;
   pointer-events: none;
-}
-
-
-}
-
-
-/* desktop - 1024px and up 
-
-
-
-  
-  
-  
+  }
 }

@@ -4,6 +4,7 @@
     50% { transform: translate(-50%, -12px); }
 }
 
+/* brush */
 @keyframes brushReveal {
   0% {
     opacity: 0;
@@ -17,4 +18,54 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* header */
+@keyframes headerReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowFloat {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+@keyframes nameReveal {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+@keyframes blink {
+  50% { opacity: 0; }
 }

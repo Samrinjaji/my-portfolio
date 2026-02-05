@@ -21,7 +21,6 @@ body {
     color: var(--color-light);
     font-size: 1rem;
     line-height: 1.6;
-    height: 100000px;
 }
 
 /* header */
@@ -102,10 +101,11 @@ body {
     z-index: 1001;
     border-radius: 50%;
     transition: background-color 0.3s ease;
+    transition: transform 0.15s ease;
 }
 
-.menu-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+.menu-btn:active {
+  transform: scale(0.92);
 }
 
 .menu-btn img {
@@ -224,6 +224,7 @@ body {
     margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: 500;
+    margin-left: 1rem;
 }
 
 .profile-description span:first-of-type  {
@@ -258,6 +259,11 @@ body {
     background: rgba(255, 255, 255, 0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.hero-socials a:hover {
+    transform: translateY(-4px);
+    background: rgba(173, 38, 45, 0.2);
+  }
 
 .brush-words {
   display: flex;
@@ -324,6 +330,63 @@ body {
 
 .brush.innovate {
   animation-delay: 0.8s;
+}
+
+
+/* animation */
+.site-header {
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: headerReveal 0.6s ease forwards;
+}
+
+.nav-links li {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: navReveal 0.4s ease forwards;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.3s; }
+.nav-links li:nth-child(2) { animation-delay: 0.4s; }
+.nav-links li:nth-child(3) { animation-delay: 0.5s; }
+.nav-links li:nth-child(4) { animation-delay: 0.6s; }
+
+.hero-intro {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-arrow {
+  animation: arrowFloat 2s ease-in-out infinite;
+}
+
+.focus-name .name {
+  opacity: 0;
+  animation: nameReveal 0.5s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-description-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.6s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.profile-role {
+  font-weight: 600;
+  letter-spacing: 1px;
+  min-height: 1.5em;
+}
+
+.typing::after {
+  content: "|";
+  margin-left: 4px;
+  opacity: 1;
+  animation: blink 1s steps(1) infinite;
 }
 
 
