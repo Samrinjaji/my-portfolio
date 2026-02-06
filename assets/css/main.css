@@ -15,6 +15,10 @@
   --color-red: #AD262D;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Preahvihear', monospace, sans-serif;
     background: var(--color-black);
@@ -41,6 +45,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
 }
 
 /* logo section */
@@ -394,18 +399,39 @@ body {
 
 /* projects */
 .section-title {
-    font-size: 1.5rem;
-    color: var(--color-teal);
-    text-align: center;
-    margin-bottom: 3rem;
+    font-size: 1.4rem;         
     font-weight: 700;
+    color: var(--color-red);
+    text-align: center;
+    margin: 2rem 0 1.5rem 0;
+    letter-spacing: 1px;
+    position: relative;           
+    display: inline-block;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;                 
+    height: 80px;
+    background: url('../images/akatsuki.png') no-repeat center/contain;
+    opacity: 0.15;                
+    transform: translate(-50%, -50%);
+    pointer-events: none;           
+    z-index: -1;                    
+}
+
+.projects-section {
+    background-color: #0B0B0B ;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -564,7 +590,7 @@ body {
     border-color: rgba(255, 0, 0, 0.4);
 }
 
-/* From Uiverse.io by cssbuttons-io */ 
+/* From Uiverse.io by cssbuttons-io 
 button {
  position: relative;
  display: inline-block;
@@ -653,3 +679,6 @@ button:hover .circle .icon.arrow {
 button:hover .button-text {
  color: var(--color-red);
 }
+
+*/
+
