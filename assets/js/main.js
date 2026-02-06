@@ -90,6 +90,30 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.style.animationDelay = `${0.7 + i * 0.1}s`;
     });
   }
+  // sections heading
+  const revealElements = document.querySelectorAll(".reveal-blur");
+  const projectCards = document.querySelectorAll(".reveal-pop");
+  const revealPoint = 150;
+
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+
+    revealElements.forEach(el => {
+    if (el.getBoundingClientRect().top < windowHeight - revealPoint) {
+      el.classList.add("active");
+    }
+  });
+
+  projectCards.forEach((card, i) => {
+    if (card.getBoundingClientRect().top < windowHeight - revealPoint) {
+      setTimeout(() => card.classList.add("active"), i * 100); 
+    }
+  });
+  };
+
+  // run on load and scroll
+  revealOnScroll();
+  window.addEventListener("scroll", revealOnScroll);
 });
 
 

@@ -332,7 +332,7 @@ body {
   animation: brushReveal 0.7s ease-out forwards;
 }
 
-/* stagger timing  */
+/* stagger timing animation */
 .brush.think {
   animation-delay: 0.2s;
 }
@@ -403,24 +403,25 @@ body {
     font-weight: 700;
     color: var(--color-red);
     text-align: center;
-    margin: 2rem 0 1.5rem 0;
+    margin: 0 0 2.5rem 0;
     letter-spacing: 1px;
     position: relative;           
     display: inline-block;
 }
 
-.section-title::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80px;                 
-    height: 80px;
-    background: url('../images/akatsuki.png') no-repeat center/contain;
-    opacity: 0.15;                
-    transform: translate(-50%, -50%);
-    pointer-events: none;           
-    z-index: -1;                    
+/* Initial state: hidden, blurred, slightly moved down */
+.reveal-blur {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(5px);
+  transition: all 0.8s ease-out;
+}
+
+/* When active: visible, sharp, in place */
+.reveal-blur.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
 .projects-section {
@@ -447,6 +448,18 @@ body {
 .project-card:hover {
     transform: translateY(-8px);
 }
+
+.reveal-pop {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s ease-out;
+}
+
+.reveal-pop.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 .terminal-header {
     background: rgba(30, 30, 30, 0.8);
