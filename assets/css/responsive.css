@@ -124,21 +124,51 @@
 
   /* about */
   .about-content {
-        grid-template-columns: 260px 1fr;
-        gap: 3rem;
-        align-items: center;
+    grid-template-columns: 260px 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .id-wrapper {
+    width: 220px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .code-editor {
+        padding: 12px;
+        font-size: 8px;
     }
 
-    .id-wrapper {
-        width: 220px;
-        height: 300px;
-        margin: 0 auto;
+    .line-number {
+        width: 18px;
+        margin-right: 8px;
     }
 
-    .profile-photo {
-        width: 160px;
-        height: 160px;
+    .indent-1 {
+        margin-left: 8px;
     }
+
+    .indent-2 {
+        margin-left: 16px;
+    }
+
+    .indent-3 {
+        margin-left: 24px;
+    }
+
+}
+  /* about 
+  
+
+    
+
+    
 
     .about-text {
         padding: 1.5rem 2rem;
@@ -395,4 +425,27 @@
         font-size: 1.4rem;
         letter-spacing: 0.5px;
     }
+
+    .code-editor {
+        padding: 10px 10px 0px 10px;
+        font-size: 10px;
+    }
+
+    .line-number {
+        width: 18px;
+        margin-right: 8px;
+    }
+
+    .indent-1 {
+        margin-left: 12px;
+    }
+
+    .indent-2 {
+        margin-left: 20px;
+    }
+
+    .indent-3 {
+        margin-left: 28px;
+    }
+    
 }
