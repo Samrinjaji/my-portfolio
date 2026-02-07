@@ -26,34 +26,33 @@ const currentPage =
 navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
+
     const targetId = link.getAttribute('href').substring(1);
     const targetEl = document.getElementById(targetId);
-    const offset = 80; // height of your header
+
+    if (!targetEl) return; // stop if target section not found
+
+    const offset = 80; // header height
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = targetEl.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition - offset;
 
+    // smooth scroll
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth'
     });
 
+    // highlight active link
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
     // close mobile menu
-    nav.classList.remove('active');
-    overlay.classList.remove('active');
-    menuBtn.classList.remove('active');
-    menuBtn.setAttribute('aria-expanded', 'false');
+    closeMenu();
   });
 });
 
-
-function closeMenu() {
-  nav.classList.remove('active');
-  overlay.classList.remove('active');
-  menuBtn.classList.remove('active');
-  menuBtn.setAttribute('aria-expanded', 'false');
-}
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -95,10 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectCards = document.querySelectorAll(".reveal-pop");
   const revealPoint = 150;
 
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
+  const revealIdWrappers = document.querySelectorAll(".reveal-id");
+  const revealTextBlocks = document.querySelectorAll(".reveal-text");
+  const revealSkillCards = document.querySelectorAll(".reveal-skill");
 
-    revealElements.forEach(el => {
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+  const revealPoint = 150;
+
+  // existing reveals
+  revealElements.forEach(el => {
     if (el.getBoundingClientRect().top < windowHeight - revealPoint) {
       el.classList.add("active");
     }
@@ -109,7 +114,28 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => card.classList.add("active"), i * 100); 
     }
   });
-  };
+
+  // ID wrapper reveal
+  revealIdWrappers.forEach(wrapper => {
+    if (wrapper.getBoundingClientRect().top < windowHeight - revealPoint) {
+      wrapper.classList.add("active");
+    }
+  });
+
+  // About text reveal
+  revealTextBlocks.forEach(block => {
+    if (block.getBoundingClientRect().top < windowHeight - revealPoint) {
+      block.classList.add("active");
+    }
+  });
+
+  // Skills
+  revealSkillCards.forEach((card, i) => {
+    if (card.getBoundingClientRect().top < windowHeight - revealPoint) {
+      setTimeout(() => card.classList.add("active"), i * 100); 
+    }
+  });
+};
 
   // run on load and scroll
   revealOnScroll();
