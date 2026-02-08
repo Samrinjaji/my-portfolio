@@ -4,583 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samrin | Portfolio</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="icon" type="image/x-icon" href="assets/images/person.png">
     <link rel="stylesheet" href="assets/css/animation.css">
 </head>
 <body>
-    <!-- site header -->
-    <header class="site-header">
+
+    <header>
         <div class="header-container">
 
-            <!-- Logo Section  -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="/assets/images/akatsuki.png" alt="Logo">
-                    <span>sam.dev</span>
-                </a>
-            </div>
-
-            <!-- Navigation Menu -->
-            <nav class="navigation-menu" id="navigation-menu">
-                <ul class="nav-links" id="navLinks">
+            <!-- logo -->
+             <a href="index.html">
+                 <img class="logo" src="/assets/images/cursemark.png" alt="logo">
+             </a>
+             
+             <!-- navigation menu -->
+              <nav class="navigation-menu" id="navigation-menu">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#home" aria-current="page" class="active">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
-
-            <!-- hamburger btn -->
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"  aria-expanded="false" aria-controls="navLinks">
+              </nav>
+             
+             <!-- hamburger btn -->
+              <button class="menu-btn" id="menuBtn" aria-label="Toogle-menu" aria-expanded="false" aria-controls="nav-links">
                 <img src="assets/icons/menu.svg" alt="">
-            </button>
-        
-            <!-- overlay -->
-            <div class="overlay" id="overlay"></div>
+              </button>
+
+             <!-- overlay -->
+             <div class="overlay" id="overlay"></div>
 
         </div>
     </header>
 
-    <!-- main content -->
     <main class="main-content" id="main-content">
-        <!-- hgome -->
         <section id="home" class="home-section">
             <div class="container">
 
-                <div class="hero-intro">
+                <!-- landing page intro -->
+                 <div class="hero-intro">
                     <img src="./assets/icons/Arrow.svg" alt="arrow" class="hero-arrow">
                     <h1 class="hero-title focus-name">
                         Hello! I Am
                         <span class="highlight name">Samrin Jaji</span>
                         <img src="assets/icons/Verified.svg"alt="Verified Developer" class="verified-badge"/>
                     </h1>
-                </div>
+                 </div>
 
-                <div class="hero-profile">
-                    <!-- Floating hero image -->
-                    <div class="hero-img-wrapper">
-                        <!-- Shadow at the bottom -->
-                        <div class="hero-shadow"></div>
+                <!-- float image -->
+                 <div class="hero-profile">
+                    <div class="hero-shadow"></div>
+                    <img src="assets/images/akatsukidev.png" alt="Samrin Akatsuki" class="profile-img focus-image" width="100px">
+                 </div>
 
-                        <img src="assets/images/akatsukidev.png" alt="Samrin Akatsuki" class="profile-img focus-image">
+                 <div class="code-editor">
+                    <div class="window-controls">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
                     </div>
 
-                    <div class="hero-description">
-                        <div class="hero-description-wrapper">
-                            <p class="profile-role typing" data-text="Frontend Developer"></p>
-                            <p class="profile-description">
-                                Crafting responsive websites where technology meets <span>creativity</span>...<br>
-                                <span>
-                                    I love combining design and logic to create meaningful digital products.
-                                </span>
-                            </p>
-                        </div>
-                        
-
-                        <div class="hero-socials">
-                            <a href="https://github.com/Samrinjaji" target="_blank" aria-label="GitHub">
-                                <img src="assets/icons/github.svg" alt="GitHub">
-                            </a>
-                            <a href="https://linkedin.com/in/Samrinjaji" target="_blank" aria-label="LinkedIn">
-                                <img src="assets/icons/linkedin.svg" alt="LinkedIn">
-                            </a>
-                        </div>
+                    <div class="code-block">
+                        <span class="code-line"><span class="line-number">1</span>  <span class="keyword">const</span> <span class="variable">profile</span> <span class="operator">=</span> {</span>
+                        <span class="code-line"><span class="line-number">2</span>    <span class="property">name</span>: <span class="string">"Samrin Jaji"</span>,</span>
+                        <span class="code-line"><span class="line-number">3</span>    <span class="property">title</span>: <span class="string">"Front-end Developer | Problem Solver"</span>,</span>
+                        <span class="code-line"><span class="line-number">4</span>    <span class="property">skills</span>: [<span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"Javascript"</span>],</span>
+                        <span class="code-line"><span class="line-number">5</span>    <span class="property">hardWorker</span>: <span class="boolean">true</span>,</span>
+                        <span class="code-line"><span class="line-number">6</span>    <span class="property">quickLearner</span>: <span class="boolean">true</span>,</span>
+                        <span class="code-line"><span class="line-number">7</span>    <span class="property">problemSolver</span>: <span class="boolean">true</span>,</span>
+                        <span class="code-line"><span class="line-number">8</span>    <span class="property">yearsOfExperience</span>: <span class="number">2</span>,</span>
+                        <span class="code-line"><span class="line-number">9</span>    <span class="property">hireable</span>: <span class="function">function</span> () {</span>
+                        <span class="code-line"><span class="line-number">10</span>      <span class="keyword">return</span> (</span>
+                        <span class="code-line"><span class="line-number">11</span>        <span class="boolean">this</span>.<span class="property">hardWorker</span> <span class="operator">&&</span></span>
+                        <span class="code-line"><span class="line-number">12</span>        <span class="boolean">this</span>.<span class="property">problemSolver</span> <span class="operator">&&</span></span>
+                        <span class="code-line"><span class="line-number">13</span>        <span class="boolean">this</span>.<span class="property">skills</span>.<span class="property">length</span> <span class="operator">>=</span> <span class="number">5</span> <span class="operator">&&</span></span>
+                        <span class="code-line"><span class="line-number">14</span>        <span class="boolean">this</span>.<span class="property">yearsOfExperience</span> <span class="operator">>=</span> <span class="number">2</span></span>
+                        <span class="code-line"><span class="line-number">15</span>      );</span>
+                        <span class="code-line"><span class="line-number">16</span>    }</span>
+                        <span class="code-line"><span class="line-number">17</span>  };</span>
                     </div>
-                </div>
+                 </div>
 
-                <div class="brush-words focus-brush">
-                    <span class="brush think">THINK.</span>
-                    <span class="brush code">CODE.</span>
-                    <span class="brush innovate">INNOVATE.</span>
-                </div>
-                
-            </div>
-        </section>
+                 <div class="hero-description">
+                    <p class="profile-description">
+                        Crafting responsive websites where technology meets <span>creativity</span>...<br>
+                        <span>
+                            I love combining design and logic to create meaningful digital products.
+                        </span>
+                    </p>
+                 </div>
 
-        <section id="projects" class="projects-section">
-            <div class="container">
-
-                <h2 class="section-title reveal-blur">Featured Projects</h2>
-
-                <div class="projects-grid">
-                    <!-- project 1 -->
-                     <div class="project-card reveal-pop">
-                        <div class="terminal-header">
-                            <div class="terminal-left">
-                                <div class="mac-dots">
-                                    <div class="dot red"></div>
-                                    <div class="dot yellow"></div>
-                                    <div class="dot green"></div>
-                                </div>
-
-                                <span class="terminal-prompt">sam@portfolio:~</span>
-                            </div>
-                            <span class="terminal-time">JAN 2026</span>
-                        </div>
-
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
-
-                        <div class="overlay-card">
-
-                            <div class="overlay-links">
-                                <a href="#" class="overlay-link">View Live →</a>
-                                <a href="#" class="overlay-link">GitHub →</a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">Portfolio Website</h3>
-                            </div>
-
-                            <p class="project-description">
-                                A personal portfolio showcasing projects and skills with a clean, modern design and smooth animations.
-                            </p>
-                        </div>
-
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                     </div>
-
-                     <!-- project 1 -->
-                     <div class="project-card reveal-pop">
-                        <div class="terminal-header">
-                            <div class="terminal-left">
-                                <div class="mac-dots">
-                                    <div class="dot red"></div>
-                                    <div class="dot yellow"></div>
-                                    <div class="dot green"></div>
-                                </div>
-
-                                <span class="terminal-prompt">sam@portfolio:~</span>
-                            </div>
-                            <span class="terminal-time">JAN 2026</span>
-                        </div>
-
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
-
-                        <div class="overlay-card">
-
-                            <div class="overlay-links">
-                                <a href="#" class="overlay-link">View Live →</a>
-                                <a href="#" class="overlay-link">GitHub →</a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">Portfolio Website</h3>
-                            </div>
-
-                            <p class="project-description">
-                                A personal portfolio showcasing projects and skills with a clean, modern design and smooth animations.
-                            </p>
-                        </div>
-
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                     </div>
-
-                     <!-- project 1 -->
-                     <div class="project-card reveal-pop">
-                        <div class="terminal-header">
-                            <div class="terminal-left">
-                                <div class="mac-dots">
-                                    <div class="dot red"></div>
-                                    <div class="dot yellow"></div>
-                                    <div class="dot green"></div>
-                                </div>
-
-                                <span class="terminal-prompt">sam@portfolio:~</span>
-                            </div>
-                            <span class="terminal-time">JAN 2026</span>
-                        </div>
-
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
-
-                        <div class="overlay-card">
-
-                            <div class="overlay-links">
-                                <a href="#" class="overlay-link">View Live →</a>
-                                <a href="#" class="overlay-link">GitHub →</a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">Portfolio Website</h3>
-                            </div>
-
-                            <p class="project-description">
-                                A personal portfolio showcasing projects and skills with a clean, modern design and smooth animations.
-                            </p>
-                        </div>
-
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                     </div>
-
-                     <!-- project 1 -->
-                     <div class="project-card reveal-pop">
-                        <div class="terminal-header">
-                            <div class="terminal-left">
-                                <div class="mac-dots">
-                                    <div class="dot red"></div>
-                                    <div class="dot yellow"></div>
-                                    <div class="dot green"></div>
-                                </div>
-
-                                <span class="terminal-prompt">sam@portfolio:~</span>
-                            </div>
-                            <span class="terminal-time">JAN 2026</span>
-                        </div>
-
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
-
-                        <div class="overlay-card">
-
-                            <div class="overlay-links">
-                                <a href="#" class="overlay-link">View Live →</a>
-                                <a href="#" class="overlay-link">GitHub →</a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">Portfolio Website</h3>
-                            </div>
-
-                            <p class="project-description">
-                                A personal portfolio showcasing projects and skills with a clean, modern design and smooth animations.
-                            </p>
-                        </div>
-
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                     </div>
-                </div>
-
-                <!-- view btn 
-                <button class="view-more">
-                    <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                    </span>
-                    <span class="button-text">View More</span>
-                </button>
-                -->
+                 <div class="hero-socials">
+                    <a href="https://github.com/Samrinjaji" target="_blank" aria-label="GitHub">
+                        <img src="assets/icons/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://linkedin.com/in/Samrinjaji" target="_blank" aria-label="LinkedIn">
+                        <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                    </a>
+                 </div>
 
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-
-                <h2 class="section-title reveal-blur">About Me</h2>
-
-                <div class="about-content">
-                    <div class="id-wrapper reveal-id">
-                        <!-- Tooltip -->
-                        <div class="card-tooltip">Click any card to view</div>
-
-                        <!--  white card -->
-                        <div class="card card-front">
-                            <!-- Profile photo -->
-                            <div class="photo-area">
-                                <img src="assets/images/profile-id.png" alt="Profile Photo" class="profile-photo">
-                            </div>
-                            <div class="info-area">
-                                <div class="name">Samrin<br>Jaji</div>
-                                <div class="footer">
-                                    <span>Developer</span>
-                                    <span>ID N#000761</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- black card -->
-                        <div class="card card-back">
-                            <h1 class="akatsuki-text">Akatsuki</h1>
-                            <img src="assets/images/akatsuki.png" width="100" alt="">
-                        </div>
-
-                        <!-- code editor card -->
-                        <div class="card card-code">
-                            <div class="code-container">
-                                <div class="window-controls">
-                                    <div class="control-btn red"></div>
-                                    <div class="control-btn yellow"></div>
-                                    <div class="control-btn green"></div>
-                                </div>
-
-                                <!-- Code Editor -->
-                                <div class="code-editor">
-                                    <div class="code-line">
-                                        <span class="line-number">1</span>
-                                        <span class="code-content">
-                                            <span class="keyword">const</span>
-                                            <span class="variable">profile</span> = {
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">2</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">name</span>: <span class="string">"Samrin Jaji"</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">3</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">title</span>: <span class="string">"Frontend Developer"</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">4</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">id</span>: <span class="string">"N#000761"</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">5</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">skills</span>: [<span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"JS"</span>],
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">6</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">hardWorker</span>: <span class="boolean">true</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">7</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">quickLearner</span>: <span class="boolean">true</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">8</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">problemSolver</span>: <span class="boolean">true</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">9</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">yearsOfExperience</span>: <span class="number">4</span>,
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">10</span>
-                                        <span class="code-content indent-1">
-                                            <span class="property">hireable</span>: <span class="function-keyword">function</span> () {
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">11</span>
-                                        <span class="code-content indent-2">
-                                            <span class="keyword">return</span> (
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">12</span>
-                                        <span class="code-content indent-3">
-                                            <span class="this-keyword">this</span>.<span class="property">hardWorker</span> <span class="operator">&&</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">13</span>
-                                        <span class="code-content indent-3">
-                                            <span class="this-keyword">this</span>.<span class="property">problemSolver</span> <span class="operator">&&</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">14</span>
-                                        <span class="code-content indent-3">
-                                            <span class="this-keyword">this</span>.<span class="property">skills</span>.<span class="property">length</span> <span class="operator">&gt;=</span> <span class="number">5</span> <span class="operator">&&</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">15</span>
-                                        <span class="code-content indent-3">
-                                            <span class="this-keyword">this</span>.<span class="property">yearsOfExperience</span> <span class="operator">&gt;=</span> <span class="number">3</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">16</span>
-                                        <span class="code-content indent-2">
-                                            );
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">17</span>
-                                        <span class="code-content indent-1">
-                                            }
-                                        </span>
-                                    </div>
-
-                                    <div class="code-line">
-                                        <span class="line-number">18</span>
-                                        <span class="code-content">
-                                            }
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-text reveal-text">
-                        <p class="about-description">
-                            I'm a passionate web developer with a love for creating beautiful, functional, and user-friendly websites. 
-                            I specialize in front-end development and enjoy bringing ideas to life through code.
-                        </p>
-                        <p class="about-description">
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                            or sharing my knowledge with the developer community. I believe in continuous learning and staying 
-                            up-to-date with the latest web development trends.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-
-        <!-- About Section 
-        <section id="about" class="about-section">
-            <div class="container">
-
-                <h2 class="section-title reveal-blur">About Me</h2>
-
-                <div class="about-content">
-                    <div class="id-wrapper reveal-id">
-                        <!-- Lanyard straps (2 if double lanyard) 
-                        <div class="lanyard-strap">
-                            <div class="lanyard-clip"></div>
-                            <div class="lanyard-hook"></div>
-                        </div>
-
-                        <!-- BLACK BACK CARD --
-                        <div class="card card-back">
-                            <h1 class="akatsuki-text">Akatsuki</h1>
-                            <img src="assets/images/akatsuki.png" width="100" alt="">
-                        </div>
-
-                        <!-- WHITE FRONT CARD --
-                        <div class="card card-front">
-                            <!-- Profile photo --
-                            <div class="photo-area">
-                                <img src="assets/images/profile-id.png" alt="Profile Photo" class="profile-photo">
-                            </div>
-                            <div class="info-area">
-                                <div class="name">Samrin<br>Jaji</div>
-                                <div class="footer">
-                                    <span>Developer</span>
-                                    <span>ID N#000761</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-text reveal-text">
-                        <p class="about-description">
-                            I'm a passionate web developer with a love for creating beautiful, functional, and user-friendly websites. 
-                            I specialize in front-end development and enjoy bringing ideas to life through code.
-                        </p>
-                        <p class="about-description">
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                            or sharing my knowledge with the developer community. I believe in continuous learning and staying 
-                            up-to-date with the latest web development trends.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Skills Section --
-                <div class="skills-section">
-                    <h3 class="subsection-title reveal-blur">Skills & Tools I Use</h3>
-
-                    <div class="skills-container reveal-blur">
-                        <!-- Skill Icon Cards --
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                            <span class="skill-name">HTML5</span>
-                        </div>
-                        
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                            <span class="skill-name">CSS3</span>
-                        </div>
-                        
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
-                            <span class="skill-name">Tailwind</span>
-                        </div>
-
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                            <span class="skill-name">Git</span>
-                        </div>
-                        
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-                            <span class="skill-name">GitHub</span>
-                        </div>
-                        
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
-                            <span class="skill-name">VS Code</span>
-                        </div>
-                        
-                        <div class="skill-icon-card reveal-skill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-                            <span class="skill-name">Figma</span>
-                        </div>
-                    </div>
-                    
-                </div>
-
-            </div>
-        </section>
-    -->
     </main>
-
+    
     <script src="/assets/js/main.js"></script>
+
 </body>
 </html>
