@@ -1,8 +1,8 @@
 /* Tablet - 768px and up  */
 @media (min-width: 768px) {
   /* header */
-  .header-container {
-    padding: 1.25rem 2.5rem;
+  .container {
+    padding: 1.25rem 3rem;
   }
 
   .navigation-menu {
@@ -23,13 +23,17 @@
   .home-section {
     padding: 5rem 3rem;
   }
-  
+
+  .container {
+    gap: 2rem;
+  }
+
   .hero-title {
     font-size: 1.2rem;
   }
-
-  .hero-profile {
-    height: 300px;
+  
+  .profile-wrapper {
+    height: 300px; 
   }
 
   .hero-shadow {
@@ -38,7 +42,7 @@
   }
 
   .profile-img {
-    width: 170px;
+    width: 180px;
   }
 
   /* code editor  */
@@ -71,8 +75,17 @@
   .indent-2 { padding-left: 48px; }
   .indent-3 { padding-left: 72px; }
 
+  .hero-description {
+    text-align: left;
+  }
+
+  .hero-description-wrapper {
+    max-width: 450px;
+  }
+
   .profile-description {
     font-size: 1.1rem;
+    line-height: 1.2;
   }
 
   .profile-description span:first-of-type {
@@ -84,27 +97,12 @@
     font-size: 1rem;
   }
 
-  .hero-socials {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
-
   .hero-socials a {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 48px;
+    height: 48px;
   }
 
-  .hero-socials a:hover {
-      transform: translateY(-4px);
-      background: rgba(173, 38, 45, 0.2);
-  }
+  
 }
 
 /* desktop - 1024px and up */
@@ -146,12 +144,35 @@
     display: none;
   }
 
+  /* home section */
   .home-section {
-    padding: 6rem 0;
+    padding: 0 0 6rem;
   }
 
+  .home-section::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 190px;
+
+  width: 900px;
+  height: 600px;
+
+  background: url("../images/cursemark.png") center / contain no-repeat;
+  pointer-events: none;
+
+  opacity: 0.15; 
+  transform: translateY(-50%) translateX(80px) scale(0.95);
+
+  z-index: -1;
+  
+  animation: heroReveal 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     gap: 1rem;
     width: 100%;
@@ -165,28 +186,55 @@
     display: block;
     margin-top: 1.5rem;
   }
-
+  
   .hero-title {
     font-size: 1.25rem;
   }
 
-  .profile-wrapper {
+  .hero-profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
-   .profile-img {
+  .profile-img {
     border-radius: 30%;
-    width: 200px;
+    width: 210px;
   }
 
-  .hero-description {
-    text-align: left;
-    display: flex;
-    justify-content: center;
+  /* code editor  */
+  .code-editor {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .window-controls {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .code-block {
     padding: 1.25rem;
-    margin-top: 2rem;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .line-number {
+    width: 36px;
+  }
+
+  .indent-1 { padding-left: 24px; }
+  .indent-2 { padding-left: 48px; }
+  .indent-3 { padding-left: 72px; }
+
+  .hero-description-wrapper {
+    max-width: 1200px;
+    margin-top: 3rem;
   }
 
   .profile-description {
@@ -200,6 +248,7 @@
   
   .profile-description span:nth-of-type(2) {
     opacity: 0.5;
+    text-align: center;
   }
 
   .hero-socials {
@@ -249,22 +298,4 @@
     animation: lineGrow 0.6s ease forwards;
     animation-delay: 0.1s; 
   }
-  
-  
-
-  /*
-  .hero-profile {
-    height: 320px; 
-  }
-
-  .hero-shadow {
-    width: 280px;
-    height: 50px;
-  }
-
-  .profile-img {
-    width: 200px;
-  }
-
-*/
 }
