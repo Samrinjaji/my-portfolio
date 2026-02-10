@@ -407,8 +407,110 @@
 
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title reveal-blur">Contact</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-card reveal-pop">
+                        <div class="terminal-header">
+                            <div class="terminal-left">
+                                <div class="mac-dots">
+                                    <div class="dot red"></div>
+                                    <div class="dot yellow"></div>
+                                    <div class="dot green"></div>
+                                </div>
+                                <span class="terminal-prompt">sam@portfolio:~ contact</span>
+                            </div>
+                            <span class="terminal-time">GET IN TOUCH</span>
+                        </div>
+                        <div class="contact-body">
+                            <h3>Let's work together</h3>
+                            <p class="contact-text">I'm open to project work, freelance, or full-time opportunities. Send a message and I'll get back to you as soon as I can.</p>
+
+                            <div class="contact-info">
+                                <div class="info-row">
+                                    <strong>Email</strong>
+                                    <a href="mailto:samrinjaji16@gmail.com">samrinjaji16@gmail.com</a>
+                                </div>
+                                <div class="info-row">
+                                    <strong>Location</strong>
+                                    <span>Zamboanga City, Philippines</span>
+                                </div>
+                                <div class="info-row socials">
+                                    <strong>Socials</strong>
+                                    <div class="social-links">
+                                        <a href="https://github.com/Samrinjaji" target="_blank" aria-label="GitHub">GitHub</a>
+                                        <a href="https://linkedin.com/in/Samrinjaji" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal-pop" action="mailto:samrin@example.com" method="POST" enctype="text/plain">
+                        <div class="terminal-header">
+                            <div class="terminal-left">
+                                <div class="mac-dots">
+                                    <div class="dot red"></div>
+                                    <div class="dot yellow"></div>
+                                    <div class="dot green"></div>
+                                </div>
+                                <span class="terminal-prompt">send_message.sh</span>
+                            </div>
+                            <span class="terminal-time">COMPOSE</span>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-row">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" placeholder="Your name" required>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" placeholder="Your email" required>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Write a brief message..." required></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="contact-btn">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="#home" class="footer-logo">
+                    <img src="/assets/images/cursemark.png" alt="Samrin" width="40" height="40">
+                </a>
+                
+                <div class="footer-socials">
+                    <a href="https://github.com/Samrinjaji" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <img src="assets/icons/github.svg" alt="">
+                    </a>
+                    <a href="https://linkedin.com/in/Samrinjaji" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img src="assets/icons/linkedin.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-prompt">sam@portfolio:~ $ exit</span>
+                <p class="footer-copy">&copy; <span id="year"></span> Samrin Jaji. Built with code.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="/assets/js/main.js"></script>
 
 </body>

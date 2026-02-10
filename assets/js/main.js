@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /* footer year */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   /* mobile nav */
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('navigation-menu');
