@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="icon" type="image/x-icon" href="assets/images/person.png">
     <link rel="stylesheet" href="assets/css/animation.css">
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <body>
 
     <header>
@@ -140,7 +140,7 @@
                             <span class="terminal-time">AUG 2025</span>
                         </div>
 
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
+                        <img src="./assets/images/gas-smoke.jpeg" alt="Gas and Smoke Detector" class="project-image">
 
                         <div class="overlay-card">
 
@@ -181,13 +181,13 @@
                             <span class="terminal-time">NOV 2025</span>
                         </div>
 
-                        <img src="./assets/images/owwa.png" alt="Portfolio Website" class="project-image">
+                        <img src="./assets/images/owwa.png" alt="owwa scholarship system" class="project-image">
 
                         <div class="overlay-card">
 
                             <div class="overlay-links">
                                 <p href="#" class="overlay-link no-hover">Private </p>
-                                <a href="#" class="overlay-link">GitHub →</a>
+                                <a href="https://github.com/Samrinjaji/owwa-scholarship-system" class="overlay-link">GitHub →</a>
                             </div>
                         </div>
 
@@ -225,7 +225,7 @@
                             <span class="terminal-time">JAN 2026</span>
                         </div>
 
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
+                        <img src="./assets/images/portfolio.png" alt="Portfolio Website" class="project-image">
 
                         <div class="overlay-card">
 
@@ -251,49 +251,6 @@
                             <span class="tag">JavaScript</span>
                         </div>
                      </div>
-
-                     <!-- project 1 -->
-                     <div class="project-card reveal-pop">
-                        <div class="terminal-header">
-                            <div class="terminal-left">
-                                <div class="mac-dots">
-                                    <div class="dot red"></div>
-                                    <div class="dot yellow"></div>
-                                    <div class="dot green"></div>
-                                </div>
-
-                                <span class="terminal-prompt">sam@portfolio:~</span>
-                            </div>
-                            <span class="terminal-time">JAN 2026</span>
-                        </div>
-
-                        <img src="./assets/images/portfolio-website.png" alt="Portfolio Website" class="project-image">
-
-                        <div class="overlay-card">
-
-                            <div class="overlay-links">
-                                <a href="#" class="overlay-link">View Live →</a>
-                                <a href="#" class="overlay-link">GitHub →</a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">Portfolio Website</h3>
-                            </div>
-
-                            <p class="project-description">
-                                A personal portfolio showcasing projects and skills with a clean, modern design and smooth animations.
-                            </p>
-                        </div>
-
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                     </div>
-                </div>
 
                 <!-- view btn 
                 <button class="view-more">
@@ -349,9 +306,8 @@
                             I specialize in front-end development and enjoy bringing ideas to life through code.
                         </p>
                         <p class="about-description">
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                            or sharing my knowledge with the developer community. I believe in continuous learning and staying 
-                            up-to-date with the latest web development trends.
+                            I’m constantly learning, experimenting with new technologies, and improving my craft—because for me, development isn’t just about writing code, it’s about building experiences that actually work for people.
+                            When I’m not coding, I enjoy exploring new design trends, improving existing projects, and pushing myself to write cleaner, more maintainable code.
                         </p>
                     </div>
                 </div>
@@ -450,7 +406,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form reveal-pop" action="mailto:samrin@example.com" method="POST" enctype="text/plain">
+                    <form id="contactForm" class="contact-form reveal-pop">
                         <div class="terminal-header">
                             <div class="terminal-left">
                                 <div class="mac-dots">
@@ -463,6 +419,11 @@
                             <span class="terminal-time">COMPOSE</span>
                         </div>
                         <div class="form-body">
+                            <!-- honeypot (spam protection) -->
+                            <input type="text" name="website" style="display:none">
+
+                            <p id="formStatus" class="form-status"></p>
+
                             <div class="form-row">
                                 <label for="name">Name</label>
                                 <input id="name" name="name" type="text" placeholder="Your name" required>
@@ -479,8 +440,11 @@
                             </div>
 
                             <div class="form-actions">
-                                <button type="submit" class="contact-btn">Send Message</button>
+                            <button type="submit" class="contact-btn">Send Message</button>
                             </div>
+
+                            <p id="formStatus" class="form-status"></p>
+
                         </div>
                     </form>
                 </div>

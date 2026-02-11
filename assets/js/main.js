@@ -115,6 +115,56 @@ document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll();
   window.addEventListener('scroll', revealOnScroll);
 
+  /* scroll spy - set nav active based on scroll position */
+  const sections = [
+    document.getElementById('home'),
+    document.getElementById('projects'),
+    document.getElementById('about'),
+    document.getElementById('contact')
+  ].filter(Boolean);
+
+  const sectionIds = ['home', 'projects', 'about', 'contact'];
+  const headerOffset = 100;
+
+  const updateActiveNav = () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    let currentId = 'home';
+
+    sections.forEach((section, i) => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + scrollY - headerOffset;
+      if (scrollY >= sectionTop) {
+        currentId = sectionIds[i];
+      }
+    });
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === `#${currentId}`);
+      link.setAttribute('aria-current', href === `#${currentId}` ? 'page' : null);
+    });
+  };
+
+  updateActiveNav();
+  window.addEventListener('scroll', updateActiveNav);
+
+  /* about section - top to bottom staggered animation on scroll into view */
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    const aboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            aboutObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+    aboutObserver.observe(aboutSection);
+  }
+
   /* card active*/
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
@@ -149,4 +199,36 @@ document.addEventListener('DOMContentLoaded', () => {
       idWrapper.classList.add('show-code');
     });
   }
+
+  emailjs.init("1VIEMXSAhc75GVxZr");
+
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+  const button = form.querySelector("button");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // honeypot check
+    if (form.website.value !== "") return;
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+    status.textContent = "";
+
+    emailjs.sendForm(
+      "service_5n36qeg",
+      "template_kenvbn4",
+      this
+    ).then(() => {
+      status.textContent = "Message sent successfully ✅";
+      form.reset();
+    }).catch(() => {
+      status.textContent = "Something went wrong ❌ Please try again.";
+    }).finally(() => {
+      button.disabled = false;
+      button.textContent = "Send Message";
+    });
+  });
 });
+

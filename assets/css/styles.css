@@ -50,6 +50,7 @@ header {
     width: 48px;
     margin-top: 0.55rem;
 
+    animation: fadeInScale 1s ease-out 0.3s backwards;
 }
 
 .navigation-menu {
@@ -78,6 +79,17 @@ header {
     gap: 1.5rem;
 }
 
+/* Navigation links - stagger animation */
+.nav-links li {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.5s; }
+.nav-links li:nth-child(2) { animation-delay: 0.6s; }
+.nav-links li:nth-child(3) { animation-delay: 0.7s; }
+.nav-links li:nth-child(4) { animation-delay: 0.8s; }
+
 .nav-links li a {
     color: var(--text);
     text-decoration: none;
@@ -99,7 +111,9 @@ header {
     cursor: pointer;
     z-index: 1000;
     border-radius: 50%;
-    transition: transform 0.15s ease;
+
+    animation: fadeInScale 0.8s ease-out 0.6s backwards;
+    transition: transform 0.3s ease;
 }
 
 .menu-btn:active {
@@ -135,7 +149,6 @@ header {
 .about-section {
     min-height: 100vh;
     padding: 3rem 2rem;
-
 }
 
 .container {
@@ -152,16 +165,27 @@ header {
 
 .hero-intro .hero-arrow {
     display: none;
+
+    animation: bounceInLeft 1s ease-out 0.3s backwards;
 }
 
 .hero-title {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 1rem;
+
+    animation: fadeInUp 0.8s ease-out 0.5s backwards;
 }
 
 .hero-title .highlight {
     color: var(--accent);
+
+    animation: fadeInUp 0.8s ease-out 0.7s backwards, 
+               gradientShine 3s ease-in-out 2s infinite;
+}
+
+.verified-badge {
+    animation: popInRotate 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s backwards;
 }
 
 /* hero profile */
@@ -175,6 +199,8 @@ header {
     position: relative;
     width: 100%;
     height: 230px; 
+
+    animation: scaleIn 1s ease-out 0.8s backwards;
 }
 
 .hero-shadow {
@@ -205,6 +231,8 @@ header {
     padding: 1rem 0.65rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     font-family: 'Courier New', Courier, monospace;
+
+    animation: slideInRight 1s ease-out 1s backwards;
 }
 
 .window-controls {
@@ -217,11 +245,17 @@ header {
     width: 12px;
     height: 12px;
     border-radius: 50%;
+
+    animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) backwards;
 }
 
 .dot.red { background: #ff5f56; }
 .dot.yellow { background: #ffbd2e; }
 .dot.green { background: #27c93f; }
+
+.dot.red { animation-delay: 1.2s; }
+.dot.yellow { animation-delay: 1.3s; }
+.dot.green { animation-delay: 1.4s; }
 
 .code-block {
     background: #2d2d2d;
@@ -252,7 +286,28 @@ header {
 .code-line {
     display: block;
     white-space: pre;
+
+    opacity: 0;
+    animation: typeLine 0.5s ease-out forwards;
 }
+
+.code-line:nth-child(1) { animation-delay: 1.5s; }
+.code-line:nth-child(2) { animation-delay: 1.6s; }
+.code-line:nth-child(3) { animation-delay: 1.7s; }
+.code-line:nth-child(4) { animation-delay: 1.8s; }
+.code-line:nth-child(5) { animation-delay: 1.9s; }
+.code-line:nth-child(6) { animation-delay: 2s; }
+.code-line:nth-child(7) { animation-delay: 2.1s; }
+.code-line:nth-child(8) { animation-delay: 2.2s; }
+.code-line:nth-child(9) { animation-delay: 2.3s; }
+.code-line:nth-child(10) { animation-delay: 2.4s; }
+.code-line:nth-child(11) { animation-delay: 2.5s; }
+.code-line:nth-child(12) { animation-delay: 2.6s; }
+.code-line:nth-child(13) { animation-delay: 2.7s; }
+.code-line:nth-child(14) { animation-delay: 2.8s; }
+.code-line:nth-child(15) { animation-delay: 2.9s; }
+.code-line:nth-child(16) { animation-delay: 3s; }
+.code-line:nth-child(17) { animation-delay: 3.1s; }
 
 .indent-1 { padding-left: 20px; }
 .indent-2 { padding-left: 40px; }
@@ -275,6 +330,8 @@ header {
     line-height: 1.5;
     font-size: 1rem;
     font-weight: 500;
+
+    animation: fadeInUp 0.8s ease-out 1.5s backwards;
 }
 
 .profile-description span:first-of-type {
