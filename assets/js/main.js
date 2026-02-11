@@ -10,27 +10,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-links a');
 
   if (menuBtn && nav && overlay) {
-    const closeMenu = () => {
+    let scrollY = 0;
+
+    const closeMenu = (scrollToY) => {
       nav.classList.remove('active');
       menuBtn.classList.remove('active');
       overlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      document.body.style.top = '';
+      document.body.style.width = '';
+      if (scrollToY !== undefined) {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: scrollToY, behavior: 'smooth' });
+        });
+      } else {
+        window.scrollTo(0, scrollY);
+      }
       menuBtn.setAttribute('aria-expanded', 'false');
     };
 
+    const openMenu = () => {
+      scrollY = window.scrollY;
+      document.body.classList.add('menu-open');
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      nav.classList.add('active');
+      menuBtn.classList.add('active');
+      overlay.classList.add('active');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    };
+
     menuBtn.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('active');
-      menuBtn.classList.toggle('active');
-      overlay.classList.toggle('active');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      if (nav.classList.contains('active')) closeMenu();
+      else openMenu();
     });
 
-    overlay.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', () => closeMenu());
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) closeMenu();
+    });
 
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
         const href = link.getAttribute('href');
 
-        // Allow normal navigation for external / page links
         if (!href || !href.startsWith('#')) {
           closeMenu();
           return;
@@ -43,37 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const offset = 80;
         const y =
-          targetEl.getBoundingClientRect().top +
-          window.pageYOffset -
-          offset;
-
-        window.scrollTo({
-          top: y,
-          behavior: 'smooth'
-        });
+          targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
 
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
 
-        closeMenu();
+        closeMenu(y);
       });
     });
-  }
-
-  /* typing */
-  const typingEl = document.querySelector('.typing');
-  if (typingEl?.dataset.text) {
-    const text = typingEl.dataset.text;
-    let index = 0;
-
-    setTimeout(function type() {
-      if (index < text.length) {
-        typingEl.textContent += text[index++];
-        setTimeout(type, 100);
-      } else {
-        typingEl.classList.add('done');
-      }
-    }, 800);
   }
 
   /* hero social animation */
@@ -148,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateActiveNav();
   window.addEventListener('scroll', updateActiveNav);
 
-  /* about section - top to bottom staggered animation on scroll into view */
+  /* about section */
   const aboutSection = document.getElementById('about');
   if (aboutSection) {
     const aboutObserver = new IntersectionObserver(
@@ -206,29 +207,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.getElementById("formStatus");
   const button = form.querySelector("button");
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    // honeypot check
     if (form.website.value !== "") return;
-
+  
     button.disabled = true;
     button.textContent = "Sending...";
     status.textContent = "";
-
-    emailjs.sendForm(
-      "service_5n36qeg",
-      "template_kenvbn4",
-      this
-    ).then(() => {
+  
+    try {
+      await emailjs.sendForm("service_5n36qeg", "template_kenvbn4", form);
       status.textContent = "Message sent successfully ✅";
       form.reset();
-    }).catch(() => {
+    } catch (err) {
       status.textContent = "Something went wrong ❌ Please try again.";
-    }).finally(() => {
+    } finally {
       button.disabled = false;
       button.textContent = "Send Message";
-    });
-  });
+    }
+  });  
 });
 

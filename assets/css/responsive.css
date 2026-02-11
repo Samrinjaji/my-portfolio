@@ -255,6 +255,12 @@
     display: none;
   }
 
+  body.menu-open {
+    position: static;
+    overflow: visible;
+    touch-action: auto;
+  }
+
   /* home section */
   .home-section {
     padding: 0 0 6rem;
